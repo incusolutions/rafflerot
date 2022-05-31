@@ -21,7 +21,7 @@ function Head(){
       
       <div>
      
-      <div>hola</div>
+      <div>hola emilio</div>
      
        <button onClick={connectWallet}>
           Conect
