@@ -83,7 +83,7 @@ const transfer = async () => {
               'recipient_address': process.env.REACT_APP_BILLETERA,
               'return_compiled_transaction': true,
               'amount': '1000000000',
-              'token_address': process.env.TOKEN,
+              'token_address':'RotMAyKDv5g1UMaUzJjBriSBqzVb3eQHopc6DjW7XTp',
               'network': 'devnet',
               //'network': 'mainnet-beta'
           }
