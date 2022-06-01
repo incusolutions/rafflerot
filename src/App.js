@@ -74,16 +74,16 @@ const transfer = async () => {
       // Do NOT put your keys in a *public* HTML file. This is ONLY for testing purposes.
       headers: {
           'Content-Type': 'application/json',
-          'APIKeyId': 'Jg7gGpZ7E0qjtJ2', // INSERT-API-KEY-ID
-          'APISecretKey': 'Pr9iSo0eIoProXA' // INSERT-API-SECRET-KEY
+          'APIKeyId': process.env.REACT_APP_BLOCKAPI, // INSERT-API-KEY-ID
+          'APISecretKey': process.env.REACT_APP_BLOCKAPISECRECT // INSERT-API-SECRET-KEY
       },
 
       body: JSON.stringify({
               'sender_public_key': resp.publicKey.toString(),
-              'recipient_address': '7YTQM5ZvkeTjHggB5R94EwsPqzctoDEK9xHKEd7CmU5n',
+              'recipient_address': process.env.REACT_APP_BILLETERA,
               'return_compiled_transaction': true,
               'amount': '1000000000',
-              'token_address':'RotMAyKDv5g1UMaUzJjBriSBqzVb3eQHopc6DjW7XTp',
+              'token_address': process.env.TOKEN,
               'network': 'devnet',
               //'network': 'mainnet-beta'
           }
