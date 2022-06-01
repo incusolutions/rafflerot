@@ -1,3 +1,7 @@
+body{
+  background: #f0fbfa;
+}
+
 .App {
   text-align: center;
 }
@@ -28,6 +32,10 @@
   color: #61dafb;
 }
 
+.item{
+  padding: 35px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +43,82 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.ease-in-out {
+  transition-timing-function: ease;
+}
+
+.duration-300 {
+    transition-duration: .3s;
+}
+
+
+.itemoff{
+  padding: 35px 20px 72px 20px;
+  /* box-shadow: 0px 10px 15px -11px rgb(0 0 0 / 10%); */
+  border-radius: 13px;
+  box-shadow: 0px 3px 17px -4px rgb(0 0 0 / 10%);
+ 
+  transition: margin-top .3s;
+    
+  cursor: pointer;
+ 
+}
+
+.itemoff:hover{
+
+margin-top: -5px;
+box-shadow: 0px 7px 17px -4px rgba(0,0,0,0.1);
+}
+
+
+.item{
+    padding: 35px 20px 72px 20px;
+    /* box-shadow: 0px 10px 15px -11px rgb(0 0 0 / 10%); */
+    border-radius: 13px;
+    box-shadow: 0px 3px 17px -4px rgb(0 0 0 / 10%);
+   
+    transition: margin-top .3s;
+      
+    cursor: pointer;
+   
+}
+
+.item:hover{
+ 
+  margin-top: -5px;
+  box-shadow: 0px 7px 17px -4px rgba(0,0,0,0.1);
+}
+
+
+.justify-center {
+  justify-content: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex {
+  display: flex;
+}
+
+.m-5 {
+  margin: 1.25rem;
+}
+
+
+.imagencita img{
+  border-radius: 25px;
+  max-width: 328px;
+}
+
+.titulo h3 {
+  display: block;
+}
+
+
+.titulo span {
+  display: block;
 }

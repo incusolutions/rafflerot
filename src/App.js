@@ -1,35 +1,52 @@
 import logo from './logo.svg';
 import './App.css';
+import React, {useState } from 'react';
 
 
 const solanaWeb3 = require('@solana/web3.js');
+let rotcoin = 4;
+
+
+
 
 
 function App() {
  
-
-  
  
-  return (
-    <Head></Head>
-  );
+            return (
+                <main>
+                <Head></Head>
+                <Items></Items>
+                </main>
+                
+                
+            );
 }
 
 
 function Head(){
   return(
       
-      <div>
+      <div className='container'>
      
-      <div>hola emilio</div>
-     
-       <button onClick={connectWallet}>
-          Conect
-       </button>
+            <div className='row'>
+                <div className='col-6'>logo</div>
+                <div className='col-6'>
+                    <button onClick={connectWallet}> Conect </button>
+                </div>
+            </div>
 
-       <button onClick={transferencia}>
-          Join Raffle
-       </button>
+            <div className='row'>
+                <div className='col-12'>
+                        <h1>ROTTENVILLE STORE</h1>
+                </div>
+            </div>
+     
+     
+     
+
+     
+    
 
        
 
@@ -39,6 +56,107 @@ function Head(){
 
     
   )
+}
+
+function Items(){
+    return (
+        <div className='container'>
+            <div className='row'>
+                    <Item></Item>
+                   
+                    <Itemoff></Itemoff>
+                    <Itemoff></Itemoff>
+                    <Itemoff></Itemoff>
+                  
+                    
+            </div>
+        </div>
+    )
+}
+
+function Item(){
+   
+   let costorot = 4;
+   const [sumadortick, Setsumadortick] = useState(1);
+   const [sumcostorot, Setsumcostorot] = useState(costorot);
+   
+   function menos(){
+    
+    Setsumadortick(sumadortick-1);
+    Setsumcostorot((sumadortick-1)*costorot);
+    
+   }
+
+   function mas(){
+  
+    Setsumadortick(sumadortick+1);
+    
+    setTimeout(function() {console.log(sumadortick);}, 5000)
+
+
+    Setsumcostorot((sumadortick+1)*costorot);
+    
+   }
+
+  
+
+   
+
+    return(
+
+        
+      
+
+        <div className='col-3 '>
+             
+         
+
+             <div className='item'>
+              <div className='imagencita'>
+                 <img width="100%" src="https://www.arweave.net/bYClK7QzKHo307GobPhDt2LH4zwZgZeZ1tBpPOC-nnk?ext=png" alt="" title="" />
+              </div>
+              <div className='titulo'>
+                    <h3>Rifa de cositas cool</h3>
+                    <span>Price: ${sumcostorot} Rots/ticket</span>
+                    <span>Raffle Ends: 22/05/2022</span>
+
+              </div>
+            
+            <button onClick={menos}>-</button> <div>{sumadortick}</div> <button onClick={mas}>+</button>
+
+              <button onClick={() => transferencia(4)}> Join Raffle</button>
+
+              </div>
+
+
+
+        </div>
+    )
+}
+
+function Itemoff(){
+    return(
+        <div className='col-3 '>
+             
+             <div className='itemoff'>
+              <div className='imagencita'>
+                 <img width="100%" src="https://www.arweave.net/bYClK7QzKHo307GobPhDt2LH4zwZgZeZ1tBpPOC-nnk?ext=png" alt="" title="" />
+              </div>
+              <div className='titulo'>
+                    <h3>cool stuff next</h3>
+                  
+                    <span>Price: </span>
+                    <span>Raffle Ends: </span>
+
+              </div>
+           
+
+              </div>
+
+
+
+        </div>
+    )
 }
 
 
@@ -66,11 +184,18 @@ const connectWallet = async () => {
 
 
 
-function transferencia(){
+function transferencia(r){
+
+
+
+    let total = r+'000000000';
+
+
 
     transfer();
-     const transfer = async () => {
+    async function transfer(){
 
+       
         const resp = await window.solana.connect();
       
         fetch(process.env.REACT_APP_APITRANSFER, {
@@ -88,7 +213,7 @@ function transferencia(){
                     'sender_public_key': resp.publicKey.toString(),
                     'recipient_address': process.env.REACT_APP_BILLETERA,
                     'return_compiled_transaction': true,
-                    'amount': '1000000000',
+                    'amount': total.toString(),
                     'token_address':'RotMAyKDv5g1UMaUzJjBriSBqzVb3eQHopc6DjW7XTp',
                     'network': 'devnet',
                     //'network': 'mainnet-beta'
