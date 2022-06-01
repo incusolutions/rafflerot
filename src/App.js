@@ -67,7 +67,7 @@ const transfer = async () => {
 
   const resp = await window.solana.connect();
 
-  fetch("https://api.blockchainapi.com/v1/solana/wallet/transfer", {
+  fetch(process.env.REACT_APP_APITRANSFER, {
 
       method: "POST",
       
