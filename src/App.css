@@ -1,5 +1,12 @@
+@font-face {
+  font-family: 'Akira';
+  src: local('Lato'), url(akira.otf) format('opentype');
+}
+
 body{
-  background: #f0fbfa;
+  background: #0f0f0f;
+  font-family: Helvetica;
+    font-weight: 100;
 }
 
 .App {
@@ -36,6 +43,10 @@ body{
   padding: 35px;
 }
 
+.item h3{
+  color: #fff;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -63,6 +74,7 @@ body{
   transition: margin-top .3s;
     
   cursor: pointer;
+  border: 1px solid #230c3f;
  
 }
 
@@ -81,14 +93,15 @@ box-shadow: 0px 7px 17px -4px rgba(0,0,0,0.1);
    
     transition: margin-top .3s;
       
-    cursor: pointer;
+ 
+    border: 1px solid #230c3f;
    
 }
 
 .item:hover{
  
   margin-top: -5px;
-  box-shadow: 0px 7px 17px -4px rgba(0,0,0,0.1);
+  box-shadow: 0px 3px 17px -4px rgb(129 148 137 / 10%);
 }
 
 
@@ -111,7 +124,12 @@ box-shadow: 0px 7px 17px -4px rgba(0,0,0,0.1);
 
 .imagencita img{
   border-radius: 25px;
-  max-width: 328px;
+ 
+}
+
+.titulo{
+  text-align: center;
+  color: #fff;
 }
 
 .titulo h3 {
@@ -122,3 +140,189 @@ box-shadow: 0px 7px 17px -4px rgba(0,0,0,0.1);
 .titulo span {
   display: block;
 }
+
+.wraperlogo{
+text-align: center;
+}
+
+.wraperlogo img{
+  width: 186px
+}
+
+.btwallet{
+ 
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  z-index: 10;
+
+}
+
+
+.botoneswall{
+  background: #0f0f0f;
+  padding: 13px 70px 13px 70px;
+    color: #fff;
+    border-radius: 4px;
+    border: 1px solid #6414ff;
+    transition: background-color .5s;
+}
+
+
+.botoneswall:hover{
+  background: #6414ff;
+  
+   
+}
+
+.dialog{
+  position: fixed;
+    background: #090511;
+    padding: 15px;
+    border-radius: 6px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 150px;
+    text-align: center;
+    /* transition: all 15s; */
+    font-size: 12px;
+    z-index: 10;
+    bottom: 20px;
+    color: #fff;
+}
+
+.nomostrar{
+  display: none;
+}
+
+.mostrar{
+
+  display: block;
+
+}
+
+.bloquecentral{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.buyticket{
+  padding: 5px 20px;
+    background: #6414ff;
+    border: 1px solid #0f0f0f;
+    color: #fff;
+    
+    border-radius: 4px;
+    transition: background-color 1s ;
+}
+
+.buyticket:hover{
+ 
+    background: #0f0f0f;
+    border: 1px solid #6414ff;
+   
+}
+
+.buyticketoff{
+  padding: 5px 20px;
+  background: #242426;
+  border: 1px solid #0f0f0f;
+  color: #fff;
+  border-radius: 4px;
+}
+
+button{
+  outline:none !important;
+}
+
+
+.menos{
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border: 1px solid #6414ff;
+  /* border-radius: 4px; */
+  background: #0f0f0f;
+  color: #6414ff;
+  border-radius: 20px;
+  margin-right: 5px;
+  transition: linear .5s;
+
+  
+  
+}
+
+.menos:hover{
+ 
+  border: 1px solid #81ff7f;
+  color: #81ff7f;
+}
+
+.mas{
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border: 1px solid #6414ff;
+  /* border-radius: 4px; */
+  background: #0f0f0f;
+  color: #6414ff;
+  border-radius: 20px;
+  transition: linear .5s;
+
+}
+
+.mas:hover{
+ 
+  border: 1px solid #81ff7f;
+  color: #81ff7f;
+}
+
+
+.centraritems{
+   display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.titrifa{
+  font-weight: bold;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  font-family: Akira;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.win{
+ 
+  color: #00f7ae;
+  font-size: 16px;
+  padding-top: 6px;
+  font-weight: bold;
+}
+
+.valor{
+  display: contents !important;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+
+.rafle{
+  color: #641334;
+  padding: 5px;
+  background: #191818;
+}
+
+
+@media only screen and (max-width : 600px) {
+        
+  .btwallet{
+    display: none;
+  }
+
+  
+
+  }
+
